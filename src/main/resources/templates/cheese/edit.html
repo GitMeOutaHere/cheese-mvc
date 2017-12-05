@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!--suppress ALL -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
+<head th:replace="fragments :: head">Edit Cheese NAME (id=ID)</head>
 <body class="container">
 <h1 th:text="${title}">Default Title</h1>
 
@@ -24,13 +23,12 @@
         <select th:field="*{type}">
             <option th:each="cheeseType : ${cheeseTypes}"
                     th:text="${cheeseType.name}"
-                    th:value="${cheeseType}">
-
-            </option>
+                    th:value="${cheeseType}"></option>
         </select>
     </div>
 
-    <input type="submit" value="Add Cheese" />
+    <input type="submit" value="Edit Cheese" />
+    <input type="hidden" th:value="${cheese.cheeseId}" name="cheeseId" />
 </form>
 
 </body>

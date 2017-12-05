@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress XmlHighlighting -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
@@ -9,6 +10,8 @@
 <nav th:replace="fragments :: navigation"></nav>
 
 <p th:unless="${cheeses} and ${cheeses.size()}">no cheese :(</p>
+
+
 
 
 <table class="table">
@@ -23,9 +26,11 @@
         <td th:text="${cheese.name}"></td>
         <td th:text="${cheese.description}"></td>
         <td th:text="${cheese.type.name}"></td>
+        <td><a th:href="@{'/cheese/edit/' + ${cheese.cheeseId}}">edit</a></td>
     </tr>
 
 </table>
 
 </body>
 </html>
+
